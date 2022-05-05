@@ -5,11 +5,11 @@ pipeline {
 
     stages {
 
-        stage('Code') {
-            steps {
-                git 'https://github.com/jvinc86/java-rihanna2.git'
-            }
-        }
+        // stage('Code') {
+        //     steps {
+        //         git 'https://github.com/jvinc86/java-rihanna2.git'
+        //     }
+        // }
 
         stage('Build') {
             steps {
