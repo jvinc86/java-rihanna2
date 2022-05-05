@@ -16,7 +16,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Ingresa en la pagina http://debian'
+                echo 'Ingresa en la pagina y prueba tu mismo'
             }
         }
 
