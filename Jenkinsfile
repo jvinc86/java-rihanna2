@@ -12,8 +12,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean install'
-                sh 'docker stop contenedor'
-                sh 'docker rm contenedor'
+                // sh 'docker stop contenedor'
+                // sh 'docker rm contenedor'
                 sh 'docker build -t vincenup/nasaimagen:v${BUILD_NUMBER} .'
             }
         }
