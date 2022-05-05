@@ -13,7 +13,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'rm -rf /home/jenkins/workspace/rihanna*'
+                // sh 'rm -rf /home/jenkins/workspace/rihanna*'
                 sh 'mvn clean install'
                 // sh 'docker stop contenedor'
                 // sh 'docker rm contenedor'
