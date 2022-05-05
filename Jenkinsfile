@@ -33,7 +33,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'docker run -d -p 80:80 --name contenedor vincenup/${JOB_NAME}:latest'
+                sh 'docker run -d -p 80:8080 --name contenedor vincenup/${JOB_NAME}:latest'
             }
         }
 
