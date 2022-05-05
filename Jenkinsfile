@@ -8,8 +8,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean install'
-                // sh 'docker stop contenedor'
-                // sh 'docker rm contenedor'
+                sh 'docker stop contenedor'
+                sh 'docker rm contenedor'
                 sh 'docker build -t vincenup/${JOB_NAME}:v${BUILD_NUMBER} .'
             }
         }
