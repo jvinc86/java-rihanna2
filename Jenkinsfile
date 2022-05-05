@@ -22,7 +22,7 @@ pipeline {
 
         stage('Release') {
             steps {
-                sh 'docker tag vincenup/${JOB_NAME}:v${BUILD_NUMBER} vincenup/${}:latest'
+                sh 'docker tag vincenup/${JOB_NAME}:v${BUILD_NUMBER} vincenup/${JOB_NAME}:latest'
                 sh 'docker login -u "vincenup" -p "85c91b79-68d8-496a-89d2-470d97fff5a6" docker.io'
                 sh 'docker push vincenup/${JOB_NAME}:v${BUILD_NUMBER}'
                 sh 'docker push vincenup/${JOB_NAME}:latest'
@@ -33,7 +33,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'docker run -d -p 80:80 --name contenedor vincenup/${}:latest'
+                sh 'docker run -d -p 80:80 --name contenedor vincenup/${JOB_NAME}:latest'
             }
         }
 
