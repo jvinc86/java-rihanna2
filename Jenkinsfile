@@ -22,12 +22,12 @@ pipeline {
 
         stage('Release') {
             steps {
-                sh 'docker tag vincenup/${}:v${BUILD_NUMBER} vincenup/${}:latest'
+                sh 'docker tag vincenup/${JOB_NAME}:v${BUILD_NUMBER} vincenup/${}:latest'
                 sh 'docker login -u "vincenup" -p "85c91b79-68d8-496a-89d2-470d97fff5a6" docker.io'
-                sh 'docker push vincenup/${}:v${BUILD_NUMBER}'
-                sh 'docker push vincenup/${}:latest'
-                sh 'docker rmi vincenup/${}:v${BUILD_NUMBER}'
-                sh 'docker rmi vincenup/${}:latest'
+                sh 'docker push vincenup/${JOB_NAME}:v${BUILD_NUMBER}'
+                sh 'docker push vincenup/${JOB_NAME}:latest'
+                sh 'docker rmi vincenup/${JOB_NAME}:v${BUILD_NUMBER}'
+                sh 'docker rmi vincenup/${JOB_NAME}:latest'
             }
         }
 
