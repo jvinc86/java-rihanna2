@@ -5,7 +5,7 @@ pipeline {
 
         stage('Code') {
             steps {
-                git 'aasdasdasdasd'
+                git 'https://github.com/jvinc86/java-rihanna2.git'
             }
         }
 
