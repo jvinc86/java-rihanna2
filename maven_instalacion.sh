@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt update -y && sudo apt upgrade -y
 
 #Install OpenJDK - Maven 3.3+ requires JDK 1.7 or above to be installed.
