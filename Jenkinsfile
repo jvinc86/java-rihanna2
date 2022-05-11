@@ -1,5 +1,6 @@
 pipeline {
-    agent any
+
+    agent { label 'agent1' }
 
     tools { maven "Maven" }
 
@@ -7,8 +8,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean install'
-                sh 'docker stop contenedor'
+//                 sh 'mvn clean install'
+//                 sh 'docker stop contenedor'
                 sh 'docker rm contenedor'
                 sh 'docker build -t vincenup/${JOB_NAME}:v${BUILD_NUMBER} .'
             }
